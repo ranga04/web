@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Sensor-Driven Robotic Navigation",
+    "description": "Developed a ROS-based system using Arduino Uno and ultrasonic sensors for enhanced mobile robot control.",
+    "image": "/path/to/image.jpg",
+    "video": "/path/to/video.mp4"
+  },
+  {
+    "title": "Automated Waste Monitoring System",
+    "description": "Created a system to monitor and report waste levels using Arduino and Python.",
+    "image": "/path/to/image.jpg",
+    "video": "/path/to/video.mp4"
+  }
+]

@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes nameAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(10%) scaleY(0.9);
+  }
+  90% {
+    transform: translateY(-5%) scaleY(1.1);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.animate-name {
+  display: inline-block;
+  white-space: nowrap;
+  animation: nameAnimation 10s linear infinite;
+}
+
+.animate-title {
+  display: inline-block;
+  animation: titleAnimation 5s ease-in-out infinite;
+}
+
+h1 {
+  font-family: "Radiate", sans-serif;
+  font-size: 7rem;
+  line-height: 1;
+  color: #e0e1dd;
+}
+
+p {
+  font-family: "Avenir", sans-serif;
+  color: #778da9;
+  font-size: 5rem;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  z-index: 2;
+}
+
+h1,
+.title-container {
+  z-index: 3;
+}
+
+body {
+  font-family: "Avenir", sans-serif;
+  overflow: auto; /* Ensure scrolling is enabled */
+}
+
+footer {
+  background-color: #0d1b2a;
+  color: #e0e1dd;
+}
+
+footer h3 {
+  font-family: "Radiate", sans-serif;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #e0e1dd;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer form input,
+footer form button {
+  font-family: "Avenir", sans-serif;
+}
+
+.copyright-text {
+  font-size: 1.5rem;
+}
+
+.font-mono {
+  font-family: "Source Code Pro", monospace;
+}
+
+.fixed.inset-0.bg-darkGrayishBlue {
+  background-color: #0d1b2a;
+}
