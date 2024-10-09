@@ -5,7 +5,7 @@ import backgroundImageMobile from "../assets/circuit_hand.png"; // Mobile backgr
 import { motion } from "framer-motion"; // For animations
 import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 
-const Hero = ({ name, title, location }) => {
+const Hero = ({ title, location }) => {
   const navigate = useNavigate(); // Initialize useNavigate hook
 
   useEffect(() => {
@@ -14,6 +14,15 @@ const Hero = ({ name, title, location }) => {
       console.log("Path length:", path.getTotalLength());
     }
   }, []);
+
+  const quote = `
+    "The Three Laws of Robotics:
+    1: A robot may not injure a human being or, through inaction, allow a human being to come to harm;
+    2: A robot must obey the orders given it by human beings except where such orders would conflict with the First Law;
+    3: A robot must protect its own existence as long as such protection does not conflict with the First or Second Law;
+    The Zeroth Law: A robot may not harm humanity, or, by inaction, allow humanity to come to harm."
+    — Isaac Asimov
+  `;
 
   return (
     <section
@@ -40,17 +49,16 @@ const Hero = ({ name, title, location }) => {
       {/* Header */}
       <Header />
 
-      {/* Intro Text */}
+      {/* Typing Animation for Quote */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
+        transition={{ duration: 2, ease: "easeInOut" }}
         className="z-10 text-center"
       >
-        <h1 className="text-3xl md:text-6xl font-bold mb-4">
-          Hi, I'm <span className="text-yellow-500">{name}</span>
-        </h1>
-        <h2 className="text-xl md:text-3xl font-light mb-8">{title}</h2>
+        <p className="text-xl md:text-3xl text-darkBlue font-serif mb-8 max-w-2xl mx-auto">
+          {quote}
+        </p>
 
         {/* Call-to-Action Button */}
         <motion.button

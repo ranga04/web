@@ -69,7 +69,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="space-y-4">
-          <h3 className="text-2xl font-bold">Let's Connect</h3>
+          <h3 className="text-2xl font-bold">Lets Connect</h3>
           <div className="flex space-x-4 text-2xl">
             <a
               href="https://www.linkedin.com/in/srirangasaitulasi"
