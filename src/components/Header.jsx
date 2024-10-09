@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../public/1.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +14,20 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-darkGrayishBlue text-veryLightGray p-4 fixed w-full top-0 z-10">
+    <header className="bg-darkGrayishBlue text-veryLightGray p-4 fixed w-full top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">
-          <Link to="/" className="hover:underline">
-            My Portfolio
-          </Link>
-        </div>
+        {/* <div className="text-2xl font-bold"> */}
+        <Link
+          to="/"
+          className="flex items-center space-x-4"
+          onClick={closeMenu}
+        >
+          <img src={logo} alt="Logo" className="h-8 w-auto mr-1 rounded-xl" />
+          <h1 className="text-2xl font-greatVibes text-white animate-signature">
+            Sri Ranga Sai Tulasi
+          </h1>
+        </Link>
+
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
             <svg
@@ -68,7 +76,9 @@ const Header = () => {
               <Link
                 to="/"
                 className="hover:underline block"
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu();
+                }}
               >
                 Home
               </Link>
@@ -77,16 +87,31 @@ const Header = () => {
               <Link
                 to="/about"
                 className="hover:underline block"
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu();
+                }}
               >
                 About
               </Link>
             </li>
             <li>
               <Link
+                to="/myJourney"
+                className="hover:underline block"
+                onClick={() => {
+                  closeMenu();
+                }}
+              >
+                My Journey
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/projects"
                 className="hover:underline block"
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu();
+                }}
               >
                 Projects
               </Link>
@@ -95,7 +120,9 @@ const Header = () => {
               <Link
                 to="/skills"
                 className="hover:underline block"
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu();
+                }}
               >
                 Skills
               </Link>
@@ -104,7 +131,9 @@ const Header = () => {
               <Link
                 to="/contact"
                 className="hover:underline block"
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu();
+                }}
               >
                 Contact
               </Link>

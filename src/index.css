@@ -4,15 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes nameAnimation {
+/* New fade-in zoom effect for the name */
+@keyframes fadeZoomIn {
   0% {
-    transform: translateX(100%);
+    opacity: 0;
+    transform: scale(0.9);
   }
   100% {
-    transform: translateX(-100%);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
+/* Title animation stays the same */
 @keyframes titleAnimation {
   0% {
     transform: translateY(-100%);
@@ -31,17 +35,25 @@
   }
 }
 
-.animate-name {
-  display: inline-block;
-  white-space: nowrap;
-  animation: nameAnimation 10s linear infinite;
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
+/* Apply new fade-in zoom to the name */
+.animate-name {
+  display: inline-block;
+  animation: fadeZoomIn 1.2s ease-out forwards;
+}
+
+/* Title animation remains the same */
 .animate-title {
   display: inline-block;
   animation: titleAnimation 5s ease-in-out infinite;
 }
 
+/* Typography and general styles */
 h1 {
   font-family: "Radiate", sans-serif;
   font-size: 7rem;
@@ -116,4 +128,99 @@ footer form button {
 
 .fixed.inset-0.bg-darkGrayishBlue {
   background-color: #0d1b2a;
+}
+
+/* Glass and Water Effect */
+.glass-tile {
+  backdrop-filter: blur(15px); /* Strong glass-like blur */
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating tile (tablet-like effect) */
+.project-card {
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px); /* Floating effect on hover */
+}
+
+/* Ripple effect styling */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes signature {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-signature {
+  display: inline-block;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid white; /* Optional cursor effect */
+  animation: signature 3s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Optional: Blinking caret at the end */
+@keyframes blink-caret {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: white;
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    background-color: #0d1b2a; /* darkBlue */
+  }
+  25% {
+    background-color: #1b263b; /* darkGrayishBlue */
+  }
+  50% {
+    background-color: #415a77; /* moderateBlue */
+  }
+  75% {
+    background-color: #778da9; /* lightGrayishBlue */
+  }
+  100% {
+    background-color: #0d1b2a; /* darkBlue */
+  }
+}
+
+.footer-animated {
+  animation: colorCycle 10s ease infinite;
+  background-size: 400% 400%;
+  color: #e0e1dd; /* veryLightGray text color for contrast */
+  transition: all 0.5s ease;
 }

@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import RoamingBot from "./RoamingBot"; // Import the RoamingBot component
+import emailjs from "emailjs-com";
+import RoamingBot from "./RoamingBot"; // Import RoamingBot
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faInstagram,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons"; // For close icon
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +17,9 @@ const Contact = () => {
     message: "",
   });
   const [errors, setErrors] = useState({});
+  const [modalMessage, setModalMessage] = useState("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,13 +38,41 @@ const Contact = () => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
-      // Handle form submission (e.g., send data to a server)
-      console.log("Form submitted:", formData);
-      setFormData({ name: "", email: "", message: "" });
-      setErrors({});
+      setIsLoading(true); // Set loading to true
+
+      // EmailJS configuration
+      emailjs
+        .send(
+          "service_divk5c7", // Your service ID
+          "template_c4p066v", // Your template ID
+          formData,
+          "J9sVQILNOQJWTccK-" // Your public key
+        )
+        .then(
+          (result) => {
+            setModalMessage(
+              "Message sent successfully! Feel free to reach out via social platforms."
+            );
+            setIsModalVisible(true);
+            setFormData({ name: "", email: "", message: "" });
+            setErrors({});
+            setIsLoading(false); // Stop loading after successful submission
+          },
+          (error) => {
+            setModalMessage(
+              "Failed to send message. Please try again or contact me via social platforms."
+            );
+            setIsModalVisible(true);
+            setIsLoading(false); // Stop loading after failure
+          }
+        );
     } else {
       setErrors(validationErrors);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -108,14 +147,74 @@ const Contact = () => {
             </span>
           )}
         </div>
+
         <button
           type="submit"
-          className="w-full bg-moderateBlue text-white py-2 rounded hover:bg-darkBlue transition duration-300"
+          className="w-full bg-moderateBlue text-white py-2 rounded hover:bg-darkBlue transition duration-300 flex items-center justify-center"
+          disabled={isLoading} // Disable button when loading
         >
-          Send
+          {isLoading ? (
+            <div className="loader" /> // Show loader when submitting
+          ) : (
+            "Send"
+          )}
         </button>
+
+        {/* Optional: Progress bar during loading */}
+        {isLoading && (
+          <div className="relative pt-2">
+            <div className="overflow-hidden h-2 text-xs flex rounded bg-lightGray">
+              <div
+                className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"
+                style={{ width: "100%" }}
+              ></div>
+            </div>
+          </div>
+        )}
       </form>
-      <RoamingBot /> {/* Add the RoamingBot component */}
+      {/* Modal for Success or Failure Message */}
+      {isModalVisible && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center relative max-w-lg w-full">
+            <button
+              className="absolute top-2 right-2 text-darkBlue"
+              onClick={closeModal}
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+            <p className="text-2xl mb-4">{modalMessage}</p>
+
+            {/* Social Icons for fallback */}
+            <div className="flex justify-center space-x-4 text-2xl">
+              <a
+                href="https://www.linkedin.com/in/srirangasaitulasi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-darkBlue hover:text-yellow-500 transition duration-300"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-darkBlue hover:text-yellow-500 transition duration-300"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                href="https://github.com/your-github-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-darkBlue hover:text-yellow-500 transition duration-300"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+      <RoamingBot />
     </motion.div>
   );
 };

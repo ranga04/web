@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInterval } from "react-use";
 
@@ -10,9 +10,42 @@ const getRandomPosition = () => {
   return { x, y };
 };
 
+// Jokes and facts for the bot
+const jokesAndFacts = [
+  "Why do programmers prefer dark mode? Because light attracts bugs!",
+  "Did you know? The first computer virus was created in 1986.",
+  "Why do Java developers wear glasses? Because they don't see sharp!",
+  "The first mechanical computer was invented by Charles Babbage in 1822!",
+  "Why do robots never get lost? They always follow the 'current path'.",
+  "AI Fact: The term 'Artificial Intelligence' was first coined in 1956!",
+];
+
+// Suggest projects
+const projectSuggestions = [
+  "Check out my Sensor-Driven Robotic Navigation project!",
+  "Have you seen the Automated Waste Monitoring System?",
+  "Explore the Arduino-Based Motion Tracking System.",
+  "Take a look at my Object Detection with OpenCV project.",
+];
+
 const RoamingBot = () => {
   const [position, setPosition] = useState(getRandomPosition());
   const [showMessage, setShowMessage] = useState(false);
+  const [botMessage, setBotMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // Track if it's a 'fact' or 'suggestion'
+  const [greeting, setGreeting] = useState("");
+
+  useEffect(() => {
+    // Determine the greeting based on the current time
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setGreeting("Good Morning! Ready to build something amazing?");
+    } else if (hour < 18) {
+      setGreeting("Good Afternoon! Don’t forget to take a break.");
+    } else {
+      setGreeting("Good Evening! Coding night, huh?");
+    }
+  }, []);
 
   useInterval(() => {
     setPosition(getRandomPosition());
@@ -20,7 +53,30 @@ const RoamingBot = () => {
 
   const handleMouseEnter = () => setShowMessage(true);
   const handleMouseLeave = () => setShowMessage(false);
-  const handleClick = () => alert("Hello! I'm your friendly roaming bot!");
+
+  const handleClick = () => {
+    // Randomly select either a joke/fact or a project suggestion
+    const isFact = Math.random() > 0.5;
+
+    if (isFact) {
+      const randomFact =
+        jokesAndFacts[Math.floor(Math.random() * jokesAndFacts.length)];
+      setBotMessage(randomFact);
+      setMessageType("fact");
+    } else {
+      const randomProject =
+        projectSuggestions[
+          Math.floor(Math.random() * projectSuggestions.length)
+        ];
+      setBotMessage(randomProject);
+      setMessageType("suggestion");
+    }
+
+    // Auto-hide the message after 4 seconds
+    setTimeout(() => {
+      setBotMessage("");
+    }, 4000); // 4 seconds
+  };
 
   return (
     <motion.div
@@ -39,6 +95,7 @@ const RoamingBot = () => {
         backgroundColor: "blue",
         borderRadius: "50%",
         cursor: "pointer",
+        color: "white",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -49,10 +106,42 @@ const RoamingBot = () => {
       </span>
       {showMessage && (
         <div
-          className="absolute top-0 left-0 mt-8 ml-8 p-2 bg-white text-black rounded shadow-lg"
-          style={{ zIndex: 1 }}
+          style={{
+            position: "absolute",
+            top: "50px",
+            left: "50px",
+            padding: "10px",
+            backgroundColor: "white",
+            color: "black",
+            borderRadius: "10px",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            fontSize: "14px", // Manually adjusted text size
+            width: "220px",
+            zIndex: 1,
+            border: "2px solid green", // Green border for greeting
+          }}
         >
-          Hovering over the bot!
+          {greeting}
+        </div>
+      )}
+      {botMessage && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "50px",
+            left: "50px",
+            padding: "10px",
+            backgroundColor: "white",
+            color: "black",
+            borderRadius: "10px",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            fontSize: "14px", // Manually adjusted text size
+            width: "220px", // Same width as greeting
+            zIndex: 1,
+            border: messageType === "fact" ? "2px solid blue" : "2px solid red", // Blue border for fact, red for suggestion
+          }}
+        >
+          {botMessage}
         </div>
       )}
     </motion.div>

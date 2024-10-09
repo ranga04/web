@@ -8,9 +8,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+// Footer Component with Animated Background
 const Footer = () => {
   return (
-    <footer className="p-8 bg-darkGrayishBlue text-veryLightGray">
+    <footer className="footer-animated p-8 text-veryLightGray">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="space-y-4">
           <h3 className="text-2xl font-bold">Work</h3>

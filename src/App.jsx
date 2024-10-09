@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PageWithAnimation from "./components/PageWithAnimation";
 import CustomCursor from "./components/CustomCursor"; // Import CustomCursor
+import MyJourney from "./components/MyJourney";
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
                   Component={() => (
                     <Hero
                       name="Sri Ranga Sai Tulasi"
-                      title="Robotics & AI Engineer"
+                      title="Robotics & Tech"
                       location="Sheffield, UK"
                     />
                   )}
@@ -35,6 +36,12 @@ const App = () => {
             <Route
               path="/about"
               element={<PageWithAnimation text="About Me" Component={About} />}
+            />
+            <Route
+              path="/myJourney"
+              element={
+                <PageWithAnimation text="Journey" Component={MyJourney} />
+              }
             />
             <Route
               path="/projects"
