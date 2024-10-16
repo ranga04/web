@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
-
-@tailwind base;
+@import url("https://fonts.google.com/selection/embed") @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
