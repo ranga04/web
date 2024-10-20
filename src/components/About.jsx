@@ -31,7 +31,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
           >
-            Robotics Engineer | AI Enthusiast | Problem Solver
+            Robotics Engineer | ML/AI Enthusiast | Problem Solver
           </motion.p>
         </motion.div>
 
@@ -65,10 +65,11 @@ const About = () => {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <p className="text-xl">
-                  I have worked on a variety of projects in robotics and AI,
-                  including sensor-driven navigation systems and automation
-                  solutions. My expertise spans machine learning, hardware
-                  design, and control systems.
+               I’ve had the incredible opportunity to work on a variety of exciting projects in the world of robotics and AI. From developing sensor-driven navigation systems that allow robots to move through complex environments to creating automation solutions that simplify repetitive tasks, I’ve been able to dive deep into problem-solving in real-world applications.<br />
+
+One of my favorite projects involved creating a self-folding origami robot as part of my MSc thesis, where I explored how we could achieve dynamic movements without sensors. It was both a challenge and an exhilarating learning experience, pushing me to find creative solutions.<br />
+
+Beyond robotics, I’ve also spent time developing my skills in machine learning, hardware design, and control systems. My journey through these different technologies has allowed me to bring a unique blend of knowledge to the table, whether I’m writing code, building hardware, or planning system architectures
                 </p>
               </motion.div>
             )}
@@ -103,9 +104,11 @@ const About = () => {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <p className="text-xl">
-                  I value innovation, creativity, and perseverance in solving
-                  complex problems. I believe in continuous learning and keeping
-                  up with the latest trends.
+                At the heart of everything I do is a passion for innovation. I believe that the future is shaped by those who are unafraid to challenge the status quo and push boundaries. Whether it's robotics, AI, or any new technology, I’m driven by a desire to create solutions that not only solve problems but improve the world around us.<br />
+
+I also value continuous learning. The tech world moves fast, and I’m always striving to stay ahead by exploring new trends, reading research papers, and experimenting with emerging technologies. I believe that being curious is one of the best ways to grow and improve in this field.<br />
+
+Lastly, I believe in perseverance. Some of the best ideas come from the hardest challenges, and I’ve learned that sticking with a problem, even when the solution seems impossible, is the key to success.
                 </p>
               </motion.div>
             )}

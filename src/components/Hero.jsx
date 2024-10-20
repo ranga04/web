@@ -17,7 +17,7 @@ const Hero = ({ title, location }) => {
 
   const quote = `
     "The Three Laws of Robotics:
-    1: A robot may not injure a human being or, through inaction, allow a human being to come to harm;
+    1: A robot may not injure a human being or, through inaction, allow a human being to come to harm; 
     2: A robot must obey the orders given it by human beings except where such orders would conflict with the First Law;
     3: A robot must protect its own existence as long as such protection does not conflict with the First or Second Law;
     The Zeroth Law: A robot may not harm humanity, or, by inaction, allow humanity to come to harm."
@@ -49,20 +49,22 @@ const Hero = ({ title, location }) => {
       {/* Header */}
       <Header />
 
-      {/* Typing Animation for Quote */}
+      {/* Typing Animation for Quote with Semi-transparent Background */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: "easeInOut" }}
         className="z-10 text-center"
       >
-        <p className="text-xl md:text-3xl text-darkBlue font-serif mb-8 max-w-2xl mx-auto">
-          {quote}
-        </p>
+        <div className="bg-black bg-opacity-50 p-4 rounded-lg max-w-2xl mx-auto">
+          <p className="text-xl md:text-3xl text-veryLightGray font-serif mb-8">
+            {quote}
+          </p>
+        </div>
 
         {/* Call-to-Action Button */}
         <motion.button
-          onClick={() => navigate("/projects")} // Use navigate to route to Projects
+          onClick={() => navigate("/projects")} 
           className="inline-block bg-yellow-500 text-darkBlue px-6 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-yellow-400 hover:scale-105 transition-transform duration-300"
           whileHover={{ scale: 1.1 }}
         >

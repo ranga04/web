@@ -2,20 +2,21 @@ import React from "react";
 
 const Skills = () => {
   const skills = [
-    { name: "Python", level: 90, icon: "🐍" },
-    { name: "C++", level: 80, icon: "📚" },
-    { name: "JavaScript", level: 85, icon: "🟨" },
-    { name: "ReactJS", level: 75, icon: "⚛️" },
-    { name: "Tailwind CSS", level: 80, icon: "🎨" },
-    { name: "PostgreSQL", level: 70, icon: "🐘" },
-    { name: "AutoCAD", level: 95, icon: "📐" },
-    { name: "SolidWorks", level: 90, icon: "🛠️" },
-    { name: "Fusion 360", level: 85, icon: "🔧" },
-    { name: "MATLAB", level: 90, icon: "📊" },
-    { name: "Simulink", level: 85, icon: "📈" },
-    { name: "ROS", level: 80, icon: "🤖" },
-    { name: "IoT", level: 75, icon: "🌐" },
+    { name: "Python", level: 75, icon: "🐍" },           // Advanced
+    { name: "C++", level: 60, icon: "📚" },              // Intermediate
+    { name: "JavaScript", level: 70, icon: "🟨" },       // Intermediate
+    { name: "ReactJS", level: 75, icon: "⚛️" },          // Intermediate
+    { name: "Tailwind CSS", level: 65, icon: "🎨" },     // Intermediate
+    { name: "PostgreSQL", level: 55, icon: "🐘" },       // Intermediate
+    { name: "AutoCAD", level: 80, icon: "📐" },          // Expert
+    // { name: "SolidWorks", level: 65, icon: "🛠️" },      // Advanced
+    { name: "Fusion 360", level: 80, icon: "🔧" },       // Advanced
+    { name: "MATLAB", level: 65, icon: "📊" },           // Advanced
+    { name: "Simulink", level: 60, icon: "📈" },         // Advanced
+    { name: "ROS", level: 65, icon: "🤖" },              // Intermediate
+    { name: "IoT", level: 55, icon: "🌐" },              // Intermediate
   ];
+  
 
   return (
     <section

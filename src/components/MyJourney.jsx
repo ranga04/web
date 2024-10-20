@@ -3,32 +3,27 @@ import { motion } from "framer-motion";
 const MyJourney = () => {
   const milestones = [
     {
-      year: "2018",
+      year: "2024",
       description:
-        "Completed BEng in Mechanical Engineering from SCSVMV University.",
-    },
-    {
-      year: "2019",
-      description:
-        "Worked as Junior Software Engineer, focusing on automation projects.",
-    },
-    {
-      year: "2021",
-      description:
-        "Joined MSc in Robotics at The University of Sheffield, expanding my knowledge in robotics and AI.",
+        "Completed an MSc project on a dynamic kinetic self-folding origami sculpture, featured at The Festival of the Mind, Millennium Gallery, Sheffield. Currently volunteering at Code Your Future, helping with code reviews and teaching coding while upskilling in AI/ML, computer vision, and robotics.",
     },
     {
       year: "2023",
       description:
-        "Completed MSc project on a self-folding origami robot, focusing on automation without sensors.",
+        "Joined MSc in Robotics at The University of Sheffield, taking on advanced modules in Machine Vision, Data Modelling, Mechatronics, Manipulator Robotics, Multi-Sensor Systems, and Mobile Robotics.",
     },
     {
-      year: "2024",
+      year: "2022",
       description:
-        "Working on an AI-powered digital twin platform and exploring business opportunities in the AI & robotics field.",
+        "Graduated from SCSVMV University with a CGPA of 9.70/10. Began working as a Junior Software Engineer, primarily focused on automation and web development projects.",
     },
-  ];
-
+    {
+      year: "2018",
+      description:
+        "Started my BEng in Mechanical Engineering at SCSVMV University, with a focus on CAD/CAM, Mechatronics, Control Systems, and Manufacturing.",
+    },
+   ];
+  
   return (
     <section id="my-journey" className="px-6 py-8 bg-lightGrayishBlue">
       <div className="max-w-4xl mx-auto">

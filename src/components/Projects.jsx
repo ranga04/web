@@ -1,35 +1,37 @@
 import React from "react";
 import ProjectCard from "./ProjectCard"; // Import the ProjectCard component
+import img from '../assets/project_img.webp';
+import uni_logo from '../assets/uni_logo.jpg';
 
 const Projects = () => {
   const projects = [
     {
-      title: "Sensor-Driven Robotic Navigation",
+      title: "DDPG for Continuous Control",
       description:
-        "Developed a ROS-based system using Arduino Uno and ultrasonic sensors for enhanced mobile robot control.",
-      image: "/assets/robotic_navigation.jpg", // Update with real image paths
-      link: "https://github.com/your-github/sensor-driven-robotic-navigation",
+        "Implemented DDPG for continuous control tasks in robotics simulation. Used advanced reinforcement learning techniques.",
+      image: img, 
+      link: "https://github.com/ranga04/ddpg",
     },
     {
-      title: "Automated Waste Monitoring System",
+      title: "ML & AI Projects",
       description:
-        "Created a system to monitor and report waste levels using Arduino and Python for smart waste management.",
-      image: "/assets/waste_monitoring.jpg", // Update with real image paths
-      link: "https://github.com/your-github/automated-waste-monitoring",
+        "A collection of machine learning and AI projects exploring different datasets and algorithms for various tasks.",
+      image:  img,
+      link: "https://github.com/ranga04/ml-ai_projects",
     },
     {
-      title: "Arduino-Based Motion Tracking System",
+      title: "Anomaly Detection in Time Series Data",
       description:
-        "Designed a motion tracking system with real-time data display using Arduino and sensors.",
-      image: "/assets/motion_tracking.jpg", // Update with real image paths
-      link: "https://github.com/your-github/motion-tracking-system",
+        "Developed an anomaly detection model for time series data, using LSTM-based networks for accurate forecasting.",
+      image: img, 
+      link: "https://github.com/ranga04/Anomaly-Detection-TSD",
     },
     {
-      title: "Object Detection with OpenCV and Python",
+      title: "University MSc Robotics Tasks",
       description:
-        "Developed an object detection program using advanced techniques in OpenCV and Python.",
-      image: "/assets/object_detection.jpg", // Update with real image paths
-      link: "https://github.com/your-github/object-detection-opencv",
+        "Showcasing various robotics and AI-related university projects completed during the MSc course in Robotics.",
+      image: uni_logo, 
+      link: "https://github.com/ranga04/university_works",
     },
   ];
 
