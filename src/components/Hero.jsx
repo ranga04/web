@@ -31,25 +31,23 @@ const Hero = ({ title, location }) => {
     >
       {/* Desktop Background */}
       <div
-        className="hidden md:block absolute inset-0 bg-cover bg-center"
+        className="hidden md:block absolute inset-0 bg-cover bg-center z-0"
         style={{
           backgroundImage: `url(${backgroundImageDesktop})`,
         }}
       ></div>
 
       {/* Mobile Background */}
-      <div className="md:hidden absolute inset-0">
+      <div className="md:hidden absolute inset-0 z-0">
         <img
           src={backgroundImageMobile}
           alt="Mobile Background"
-          className="w-full h-full object-cover fixed"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Header */}
+      {/* Content */}
       <Header />
-
-      {/* Typing Animation for Quote with Semi-transparent Background */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,15 +55,13 @@ const Hero = ({ title, location }) => {
         className="z-10 text-center"
       >
         <div className="bg-black bg-opacity-50 p-4 rounded-lg max-w-2xl mx-auto">
-          <p className="text-xl md:text-3xl text-veryLightGray font-serif mb-8">
+          <p className="text-xl md:text-3xl text-veryLightGray font-serif mb-1">
             {quote}
           </p>
         </div>
-
-        {/* Call-to-Action Button */}
         <motion.button
-          onClick={() => navigate("/projects")} 
-          className="inline-block bg-yellow-500 text-darkBlue px-6 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-yellow-400 hover:scale-105 transition-transform duration-300"
+          onClick={() => navigate("/projects")}
+          className="mt-2 inline-block bg-yellow-500 text-darkBlue px-6 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-yellow-400 hover:scale-105 transition-transform duration-300"
           whileHover={{ scale: 1.1 }}
         >
           Explore My Work
@@ -73,7 +69,7 @@ const Hero = ({ title, location }) => {
       </motion.div>
 
       {/* Location */}
-      <div className="absolute left-4 bottom-4 bg-darkBlue p-2 rounded-full flex items-center space-x-2">
+      <div className="absolute left-4 bottom-4 bg-darkBlue p-2 rounded-full flex items-center space-x-2 z-10">
         <svg
           className="w-6 h-6 text-veryLightGray"
           fill="none"

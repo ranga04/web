@@ -9,10 +9,10 @@ const TypingAnimation = ({ text, onComplete }) => {
       const timeout = setTimeout(() => {
         setDisplayedText(displayedText + text[index]);
         setIndex(index + 1);
-      }, 100);
+      }, 150); // Increase delay slightly for smoother typing
       return () => clearTimeout(timeout);
     } else {
-      const timer = setTimeout(onComplete, 500); // Delay before calling onComplete
+      const timer = setTimeout(onComplete, 1000); // Delay before calling onComplete
       return () => clearTimeout(timer);
     }
   }, [index, displayedText, text, onComplete]);

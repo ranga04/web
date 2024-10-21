@@ -22,10 +22,10 @@ const jokesAndFacts = [
 
 // Suggest projects
 const projectSuggestions = [
-  "Check out my Sensor-Driven Robotic Navigation project!",
-  "Have you seen the Automated Waste Monitoring System?",
-  "Explore the Arduino-Based Motion Tracking System.",
-  "Take a look at my Object Detection with OpenCV project.",
+  "Explore my DDPG for Continuous Control project, implementing advanced reinforcement learning in robotics.",
+  "Check out my Machine Learning & AI Projects, featuring various algorithms and dataset explorations.",
+  "Take a look at my Anomaly Detection in Time Series Data project, using LSTM for accurate forecasting.",
+  "Discover my University MSc Robotics Tasks, showcasing projects from my MSc course in Robotics.",
 ];
 
 const RoamingBot = () => {

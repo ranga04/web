@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 
-
 // Footer Component with Animated Background
 const Footer = () => {
   return (
@@ -39,17 +38,16 @@ const Footer = () => {
             </li>
           </ul>
         </div> */}
-       <div className="space-y-4">
-  <h3 className="text-2xl font-bold">Expertise</h3>
-  <p className="text-lg text-white">
-    Robotics and Automation <br />
-    Machine Learning & AI Development <br />
-    Computer Vision & Autonomous Systems <br />
-    Embedded Systems & ROS <br />
-    Software Development & Testing
-  </p>
-</div>
-
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold">Expertise</h3>
+          <p className="text-lg text-white">
+            Robotics and Automation <br />
+            Machine Learning & AI Development <br />
+            Computer Vision & Autonomous Systems <br />
+            Embedded Systems & ROS <br />
+            Software Development & Testing
+          </p>
+        </div>
 
         <div className="space-y-4">
           <h3 className="text-2xl font-bold">About</h3>
@@ -59,7 +57,7 @@ const Footer = () => {
                 About Me
               </a>
             </li>
-           
+
             <li>
               <a
                 href="https://www.instagram.com/ranga_sai26/profilecard/?igsh=ZDg4YjlobmxnbXo="
@@ -89,7 +87,7 @@ const Footer = () => {
               >
                 Download Resume <FontAwesomeIcon icon={faFileAlt} />
               </a>
-              </li>
+            </li>
           </ul>
         </div>
         <div className="space-y-4">
@@ -148,10 +146,7 @@ const Footer = () => {
         <p className="text-sm mr-2">© 2024 Tulasi. All rights reserved.</p>
         <p className="text-sm">
           Email:{" "}
-          <a
-            href="mailto:srstulasi@gmail.com"
-            className="hover:underline"
-          >
+          <a href="mailto:srstulasi@gmail.com" className="hover:underline">
             srstulasi@gmail.com
           </a>{" "}
           | Phone:{" "}

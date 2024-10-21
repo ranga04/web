@@ -195,7 +195,7 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/ranga_sai26/profilecard/?igsh=ZDg4YjlobmxnbXo="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-darkBlue hover:text-yellow-500 transition duration-300"
@@ -203,7 +203,7 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
               <a
-                href="https://github.com/your-github-profile"
+                href="https://github.com/ranga04"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-darkBlue hover:text-yellow-500 transition duration-300"
