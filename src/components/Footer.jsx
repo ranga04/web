@@ -7,6 +7,7 @@ import {
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 // Footer Component with Animated Background
 const Footer = () => {
@@ -53,9 +54,9 @@ const Footer = () => {
           <h3 className="text-2xl font-bold">About</h3>
           <ul>
             <li>
-              <a href="/about" className="hover:underline">
+              <Link to="/about" className="hover:underline">
                 About Me
-              </a>
+              </Link>
             </li>
 
             <li>
