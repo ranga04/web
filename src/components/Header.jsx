@@ -116,7 +116,7 @@ const Header = () => {
                 Projects
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/skills"
                 className="hover:underline block"
@@ -126,7 +126,7 @@ const Header = () => {
               >
                 Skills
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/contact"

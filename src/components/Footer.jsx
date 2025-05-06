@@ -144,7 +144,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-8 text-center flex flex-wrap justify-center border-t border-gray-600 pt-4">
-        <p className="text-sm mr-2">© 2024 Tulasi. All rights reserved.</p>
+        <p className="text-sm mr-2">© 2025 Tulasi. All rights reserved.</p>
         <p className="text-sm">
           Email:{" "}
           <a href="mailto:srstulasi@gmail.com" className="hover:underline">
